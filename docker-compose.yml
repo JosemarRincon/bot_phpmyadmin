@@ -1,0 +1,22 @@
+version: '3.4'
+services:
+    bot_phpmyadmin:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        image: bot_phpmyadmin
+        restart: always
+        container_name: bot_phpmyadmin
+        environment:
+            MINIO_ACCESS_KEY: user
+            MINIO_SECRET_ACCESS_KEY: senha
+            URL_MINIO: sua_url
+            URL_PHPMYADMIN: sua_url
+            USUARIO: user_phpmyadmin
+            SENHA: senha_phpmyadmin
+        volumes:
+            - .:/app
+
+
+   
+        
